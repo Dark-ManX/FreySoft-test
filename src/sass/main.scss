@@ -1,7 +1,18 @@
-/*
- * Главный файл стилей.
- * Все паршалы подключаются сюда.
- */
+// -----------variables-------------------
+@import './utils/variables';
 
-// Стили для файла с примером HTML-фрагмента
-@import './example';
+// -----------reset styles----------------
+@import './utils/reset';
+
+// -----------base styles-----------------
+@import './base/base';
+@import './components/button';
+
+// -----------headers styles--------------
+@import './components/header';
+
+// -----------main styles-----------------
+@import './components/body-styles';
+
+// -----------footer styles---------------
+@import './components/footer';
