@@ -1,19 +1,19 @@
 // -----------variables-------------------
-@import './utils/variables';
+@import './utils/_variables';
 
 // -----------reset styles----------------
-@import './utils/reset';
+@import './utils/_reset';
 
 // -----------base styles-----------------
-@import './base/base';
-@import './components/button';
+@import './base/_base';
+@import './components/_button';
 
 // -----------headers styles--------------
-@import './components/header';
+@import './components/_header';
 
 // -----------main styles-----------------
-@import './components/hero';
-@import './components/body-styles';
+@import './components/_hero';
+@import './components/_body-styles';
 
 // -----------footer styles---------------
-@import './components/footer';
+@import './components/_footer';
