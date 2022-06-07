@@ -2,11 +2,32 @@
     padding: 27px 0 32px;
     background-color: black;
 
+    @media screen and (min-width: 1440px) {
+        padding: 24px 0 27px;
+    }
+
+    &__thumb {
+        @media screen and (min-width: 768px) {
+            display: flex;
+            align-items: baseline;
+        }
+    }
+
     &__rights {
         color: $footer-message;
         margin-bottom: 7px;
         font-size: 14px;
         line-height: calc(22 / 14);
+        letter-spacing: -1px;
+
+        @media screen and (min-width: 768px) {
+            color: $footer-tab-message;
+        }
+
+        @media screen and (min-width: 1440px) {
+            color: $footer-list-color;
+            margin-right: auto;
+        }        
     }
 
     &-list {
@@ -15,8 +36,17 @@
         align-items: center;
         margin-bottom: 23px;
 
+        @media screen and (min-width: 1440px) {
+            margin-right: 220px;
+            margin-bottom: 0;
+        }
+
         &__item:not(:last-child) {
             margin-right: 16px;
+
+            @media screen and (min-width: 1440px) {
+                margin-right: 32px;
+            }
         }
 
         &__link {
@@ -26,16 +56,36 @@
         }
     }
 
+    &-lists__thumb {
+        @media screen and (min-width: 768px) {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        @media screen and (min-width: 1440px) {
+            flex-direction: row;
+        }
+    }
+
     &-social-list {
         display: flex;
         justify-content: center;
 
         &__item:not(:last-child) {
-            margin-right: 18px;
-        }
-
-        &__link {
-
+            margin-right: 24px;
         }
     }
 }
+
+.rights {
+    margin-right: auto;
+}
+
+.social-list {
+    @media screen and (min-width: 768px) and (max-width: 1440px) {
+    margin-right: 64px;
+    }
+}
+
+
+

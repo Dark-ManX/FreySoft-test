@@ -1,6 +1,6 @@
 .header {
     background-color: $background-black;
-    padding-top: 48px;
+    padding-top: 26px;
     padding-bottom: 48px;
 
     &-container {
@@ -25,7 +25,16 @@
         width: 24px;
         height: 24px;
         cursor: pointer;
-        display: flex;
+
+        @media screen and (min-width: 1440px) {
+            min-width: 156px;
+            border: 2px solid #18E8A4;
+            border-radius: 383px;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
 
         &:last-child {
             margin-left: 16px;
@@ -35,10 +44,67 @@
         
         background-color: $background-black;
         fill: white;
+
+        @media screen and (min-width: 1440px) {
+                display: none;
+            }
         }
 
         &__contact {
             display: flex;
         }
     }
+}
+
+.menu {
+    @media screen and (min-width: 1440px) {
+            display: none;
+        }
+}
+
+.contact {
+
+    &__text {
+        display: none;
+        
+    @media screen and (min-width: 1440px) {
+        display: block;
+        color: white;
+    }
+    }
+}
+
+.nav {
+    display: none;
+
+    @media screen and (min-width: 1440px) {
+        display: flex;
+        margin-right: auto;
+    }
+
+    &__list {
+        @media screen and (min-width: 1440px) {
+            display: flex;
+        }
+    }
+
+    &__item:not(:last-child) {
+        @media screen and (min-width: 1440px) {
+            margin-right: 36px;
+        }
+    }
+
+    &__link {
+        color: white;
+        transition: color 250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+        &:hover,
+        &:focus {
+            color: $special-color;
+        }
+    }
+}
+
+.logo-sizes {
+    margin-right: auto;
 }

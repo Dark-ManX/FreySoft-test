@@ -1,115 +1,70 @@
-@font-face {
-    font-family: "Helvetica black";
-    font-style: normal;
-    font-weight: 400;
-    /* Браузер сначала попробует найти шрифт локально */
-    src: local("Helvetica black"),
-        /* Если не получилось, загрузит woff2 */
-        url("/fonts/HelveticaNowDisplay-Black.woff2") format("woff2"),
-        /* Если браузер не поддерживает woff2, загрузит woff */
-        url("/fonts/HelveticaNowDisplay-Black.woff") format("woff");
-}
-
-// ------------hero section------------------
-
-.hero {
-    background-color: $background-black;
-    color: white;
-
-    &__title {
-    font-family: 'Helvetica black';
-    font-weight: 900;
-    font-size: 40px;
-    line-height: calc(44 / 40);
-    margin-bottom: 16px;
-    color: white;
-    }
-
-    &__text {
-        font-weight: 400;
-        font-style: 16px;
-        line-height: calc(25 / 16);
-        margin-bottom: 42px;
-    }
-
-    &__img-container {
-        position: relative;
-    }
-
-    &__img-box {
-        position: relative;
-        display: flex;
-
-        &:not(:last-child) {
-            margin-bottom: 6px;
-        }
-
-        &:last-child {
-            margin-bottom: 42px;
-        }
-    }
-
-    &__img {
-        border-radius: 10px;
-        width: 119px;
-        display: block;
-
-        &:not(:last-child) {
-            margin-right: 6px;
-        }
-    }
-
-    &__button {
-        padding: 12px 16px;
-    }
-    
-}
-
-.box-1 {
-    left: -176px;
-}
-
-.box-2 {
-    left: -139px;
-}
-
-.box-3 {
-    position: relative;
-    left: -176px;
-    width: calc(100vw + 176px);
-
-    &::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: linear-gradient(to bottom, rgba(2, 2, 19, 0) 0%,
-            #020213 100%);
-
-    }
-}
-
-.symbol {
-    color: $special-color;
-}
-
 // -----------------about section---------------
+
 .text {
+    font-family: 'Helvetica';
     font-size: 16px;
-    line-height: calc(29/16);
+    line-height: calc(29 / 16);
+    letter-spacing: -0.6px;
 }
 
 .about {
 
+    &-main-thumb {
+        @media screen and (min-width: 1440px) {
+            display: flex;
+        }
+    }
+
     &__title {
         margin-bottom: 31px;
+        line-height: calc(29 / 32);
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 48px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            width: 320px;
+            margin-right: 100px;
+            font-size: 62px;
+            line-height: calc(56 / 62);
+        }
+    }
+
+    &__thumb {
+        @media screen and (min-width: 768px) {
+            display: flex;
+        }
+
+        @media screen and (min-width: 1440px) {
+            width: 840px;
+        }
     }
 
     &__text {
+        @media screen and (min-width: 768px) {
+            flex-basis: 348px;
+            letter-spacing: 0;
+        }
+
+        @media screen and (min-width: 1440px) {
+            flex-basis: 400px;
+            letter-spacing: 0.2px;
+        }
+    }
+
+    &__text:not(:last-child) {
+        @media screen and (max-width: 767px) {
         margin-bottom: 32px;
+        }
+
+        @media screen and (min-width: 768px) {
+            margin-right: 32px;
+        }
+        
+        @media screen and (min-width: 1440px) {
+            margin-right: 40px;
+        }
     }
 }
 
@@ -118,19 +73,91 @@
 .recruitment {
     background-color: $recruitment-bg-color;
 
+    &__position{
+        @media screen and (min-width: 1440px) {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 54px;
+        }
+    }
+
     &__title {
         margin-bottom: 24px;
         letter-spacing: -1px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 32px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            margin-right: 285px;
+            margin-bottom: 54px;
+            font-size: 62px;
+            line-height: calc(68 / 62);
+        }
+    }
+
+    &__thumb {
+        margin-bottom: 55px;
+
+        @media screen and (min-width: 768px) and (max-width: 1439px) {
+            display: flex;
+            margin-bottom: 32px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            margin-bottom: 54px;
+        }
+    }
+
+    &-list {
+        position: relative;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+
+            &__item {
+                flex-basis: 354px;
+            }
+
+            &__item:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            display: flex;
+            justify-content: space-between;
+
+            &__item {
+                flex-basis: calc(100% / 2 - 20px);
+            }
+
+            &__item:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+
+        
     }
 
     &__card {
         position: relative;
         height: 514px;
-        padding: 32px 27px;
+        padding: 32px 24px;
         background-color: white;
         border-radius: 16px;
         box-shadow: 0px 32px 16px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 2px 1px rgba(0, 0, 0, 0.09);
         background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(117.15deg, #1BD1FC 0%, #316DD1 100%);
+
+        @media screen and (min-width: 768px) {
+            padding: 32px 20px;
+        }
+
+        @media screen and (min-width: 1440px) {
+                padding: 56px 24px 24px;
+        }
     }
 
     &__stages {
@@ -143,10 +170,44 @@
 
     &__title {
         margin-bottom: 24px;
+
+        @media screen and (min-width: 1440px) {
+            font-size: 62px;
+            line-height: calc(68 / 62);
+            margin-bottom: 16px;
+        }
     }
 
     &__text {
-        line-height: calc(25/16);
+        line-height: calc(25 / 16);
+
+        @media screen and (min-width: 1440px) {
+            width: 300px;
+        }
+    }
+}
+
+.card-title {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: calc(40 / 36);
+}
+
+.thumb__text {
+    flex-basis: 338px;
+
+    @media screen and (min-width: 1440px) {
+        font-size: 24px;
+        line-height: 37px;
+    }
+
+    &:not(:last-child) {
+        margin-right: 52px;
+
+        @media screen and (min-width: 1440px) {
+           margin-right: 24px;
+           
+        }
     }
 }
 
@@ -156,15 +217,29 @@
     background-repeat: no-repeat;
     background-position: bottom 20% right 50%;
     background-size: 42% auto;
+
+    @media screen and (min-width: 768px) {
+        background-position: bottom 10% right 50%;
+        background-size: 30%;
+    }
+
+    @media screen and (min-width: 1440px) {
+        background-position: bottom 20% right 10%;
+        background-size: 19%;
+    }
 }
 
 .card-2 {
     background-color: #FFFFFF;
     background-image: url(../images/Two1.png);
     background-repeat: no-repeat;
-    background-position: bottom 20% right 50%;
+    background-position: bottom 20% right 10%;
     background-size: 80%;
 
+    @media screen and (min-width: 1440px) {
+        background-image: url(../images/Two.png);
+        background-size: 30%;
+    }
 }
 
 .card-3 {
@@ -173,13 +248,51 @@
     background-repeat: no-repeat;
     background-position: bottom 20% right 50%;
     background-size: 90%;
-
 }
 
-.arrows {
-    position: relative;
-    top: -70px;
-    left: -400px;
+.arrows-thumb {
+    display: flex;
+    justify-content: center;
+
+    &__arrows {
+        position: relative;
+        align-items: center;
+        top: -70px;
+        left: -400px;    
+
+        @media screen and (min-width: 768px) {
+            top: -70px;
+            left: -160px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            top: -70px;
+            left: 0px;
+        }
+    }
+}
+
+.text__thumb {
+    @media screen and (min-width: 1440px) {
+        display: flex;
+    }
+}
+
+.last-item {
+    @media screen and (min-width: 1440px) {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+}
+
+.position {
+    display: none;
+
+    @media screen and (min-width: 1440px) {
+        display: block;
+        width: 248px;
+    }
 }
 
 // ------------recruitment article--------------
@@ -188,24 +301,86 @@
     background-color: $recruitment-article-bgcolor;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+    @media screen and (min-width: 768px) {
+        padding-bottom: 48px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        padding-bottom: 210px;
+    }
+
         &__title {
             color: white;
             margin-bottom: 55px;
+
+            @media screen and (min-width: 768px) {
+                margin-bottom: 48px;
+                width: 477px;
+                margin-right: 911px;
+                letter-spacing: -1px;
+            }
+
+            @media screen and (min-width: 1440px) {
+                width: 589px;
+                font-size: 48px;
+                line-height: calc(53 / 48);
+                letter-spacing: -1px;
+                margin-bottom: 80px;
+            }
         }
+        
+}
+
+.list {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: center;
+        margin-left: -10px;
+
+        &-item {
+            margin-left: 10px;
+            flex-basis: 359px;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        margin-left: -20px;
+
+        &-item {
+            margin-left: 20px;
+            flex-basis: 494px;
+        }
+    }
 }
 
 .list-item {
+    overflow: hidden;
 
     &__thumb {
-        max-width: 280px;
+        
         background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(117.15deg, #1BD1FC 0%, #316DD1 100%);
         box-shadow: 0px 32px 16px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 2px 1px rgba(0, 0, 0, 0.09);
         border-radius: 16px;
         padding: 32px 20px 40px;
+
+        @media screen and (min-width: 768px) {
+            
+            height: 506px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            padding: 48px 70px 41px;
+            height: 591px;
+        }
     }
 
     &__svg {
         width: 100%;
+        margin-bottom: 32px;
+
+        @media screen and (min-width: 1440px) {
+            margin-bottom: 56px;
+        }
     }
 
     &__title {
@@ -218,10 +393,41 @@
         line-height: calc(35 / 32);
         font-weight: 800;
         margin-bottom: 24px;
+
+        @media screen and (min-width: 1440px) {
+            margin-bottom: 48px;
+        }
     }
 }
 
 .advantages-list {
+
+    @media screen and (min-width: 768px) {
+
+        .yes {
+            position: relative;
+            margin-left: 44px;
+        }
+
+        .yes::before {
+            content: url(../images/yes.png);
+            position: absolute;
+            top: -8px;
+            left: -55px;            
+        }
+
+        .no {
+            position: relative;
+            margin-left: 44px;
+        }
+
+        .no::before {
+            content: url(../images/no.png);
+            position: absolute;
+            top: -8px;
+            left: -55px;
+        }
+    }
 
     &__item:not(:last-child) {
         margin-bottom: 20px;
@@ -244,11 +450,29 @@
     background-color: $form-color;
     color: #FFFFFF;
 
+    &__container {
+        padding: 0 160px;
+    }
+
+    &__thumb {
+        @media screen and (min-width: 1440px) {
+            display: flex;
+        }
+    }
+
     &__title {
         display: block;
         text-align: center;
         color: white;
         margin-bottom: 48px;
+        
+        @media screen and (min-width: 768px) {
+            margin-bottom: 17px;
+        }
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 80px;
+        }
     }
 
     &__input {
@@ -257,6 +481,16 @@
         border-bottom: 2px solid $about-text-color;
         width: 100%;
         height: 30px;
+        color: rgba(255, 255, 255, 0.5);
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 16px;
+            height: 52px;
+        }
+
+        @media screen and (min-width: 768px) {
+            margin-right: 24px;
+        }
 
         &:not(:last-child) {
             margin-bottom: 24px;
@@ -267,14 +501,55 @@
         }
     }
 
+    .select-thumb {
+
+        &__field option {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+
+            &__field {
+                width: 314px;
+                margin-right: 24px;
+            }
+        }
+    }
+
+    &__option {
+        color: #FFFFFF;
+    }
+
     &__button {
+        position: relative;
         width: 50px;
         height: 50px;
         background-color: $form-color;
         border: none;
         cursor: pointer;
         border-radius: 50%; 
+        display: flex;
         align-items: center;
+        z-index: 5;
+
+        @media screen and (min-width: 768px) {
+            width: 56px;
+            height: 56px;
+        }
+    }
+
+    &__svg {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transform: scale(2.4);
+        top: 50%;
+        left: 0;
+        
     }
 }
 
@@ -296,26 +571,73 @@
                     radial-gradient(circle at 400px 600px, rgba(235, 159, 239, 0.6) 25%, rgba(255, 255, 255, 0.4) 40%),
                     radial-gradient(circle at -150px 550px, rgba(228, 0, 102, 0.2) 5%, rgba(255, 255, 255, 0.4) 20%),
                     radial-gradient(circle at 150px 750px, rgba(250, 210, 4, 1) 25%, rgba(255, 255, 255, 0.4) 50%),
-                    radial-gradient(circle at 50% 65%, rgba(229, 99, 153, 1) 35%, rgba(255, 255, 255, 0.4) 60%);
+                    radial-gradient(circle at 50% 65%, rgba(229, 99, 153, 1) 55%, rgba(255, 255, 255, 0.4) 100%);
+
+    @media screen and (min-width: 768px) {
+        padding-top: 48px;
+    }
 
     &__title {
         margin-bottom: 24px;
         letter-spacing: -1px;
+    
+        @media screen and (min-width: 1440px) {
+            margin-bottom: 32px;
+        }
     }
 
     &-list {
         margin-bottom: 32px;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -20px;
+            margin-top: -20px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            margin-left: -24px;
+            margin-top: -24px;
+        }
         
         &__item {
             margin-bottom: 10px;
+
+            @media screen and (min-width: 768px) {
+                margin-left: 20px;
+                margin-top: 20px;
+                flex-basis: calc(100% / 2 - 20px);
+            }
+
+            @media screen and (min-width: 1440px) {
+                margin-left: 24px;
+                margin-top: 24px;
+                flex-basis: calc(100% / 3 - 24px);
+            }
+        }
+    }
+
+    &__thumb {
+        @media screen and (min-width: 768px) {
+            display: flex;
+            justify-content: center;
         }
     }
 
     &__button {
         padding: 27px 16px;
-        width: 100%;
+        min-width: 100%;
         color: $vacancies-text-color;
         font-weight: 800;
+
+        @media screen and (min-width: 768px) {
+            min-width: 280px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            min-width: calc((100% - 48px) / 3);
+        }
     }
 }
 
@@ -331,26 +653,81 @@
         letter-spacing: -1px;
     }
 }
+
+.design-shown {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+}
+
+.resourses-shown {
+    @media screen and (min-width: 768px) and (max-width: 1439px) {
+        display: none;
+    }
+}
+
+// ---------------perks section----------------
+.change-order {
+    @media screen and (min-width: 1440px) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
 .perks {
-    margin-top: 80px;
     background-color: #FCF7F8;
+
+    @media screen and (min-width: 1440px) {
+        background-color: white;
+    }
 
     &__title {
         margin-bottom: 66px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 46px;
+            text-align: center;
+            font-size: 48px;
+            line-height: calc(62 / 48);
+        }
+
+        @media screen and (min-width: 1440px) {
+            margin-bottom: 80px;
+        }
     }
 
     &-list {
         margin-bottom: 48px;
+
+        @media screen and (min-width: 1440px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: -80px;
+            margin-left: -120px;
+        }
     }
 
     &-item {
+
+        @media screen and (min-width: 1440px) {
+            flex-basis: calc((100% - 40px) / 3 - 120px);
+            margin-top: 80px;
+            margin-left: 120px;
+            height: 418px;        }
         
         &__thumb {
         background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(117.15deg, #1BD1FC 0%, #316DD1 100%);
         box-shadow: 0px 32px 16px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 2px 1px rgba(0, 0, 0, 0.09);
         border-radius: 16px;
         padding: 32px 20px;
-        height: 560px;
+        
+
+        @media screen and (min-width: 1440px) {
+            box-shadow: none;
+        }
         }
 
         &__svg {
@@ -362,6 +739,7 @@
             letter-spacing: -1.5px;
             font-weight: 800;
             margin-bottom: 24px;
+            text-align: center;
         }
 
         &__text {
@@ -376,21 +754,92 @@
 .form {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(150px);
-    padding-top: 62px;
+    padding: 62px 0 70px;
+
+    @media screen and (min-width: 100px) {
+        padding: 100px 0;
+    }
+
+    &-main {
+        @media screen and (min-width: 1440px) {
+            display: flex;
+        }
+
+        &__container {
+            @media screen and (min-width: 1440px) {
+                width: 624px;
+            }
+        }
+
+        &__thumb {
+            @media screen and (min-width: 1440px) {
+                display: block;
+                width: 540px;
+                margin-right: 96px;
+            }
+        }
+    }
 
     &__request {
         margin-bottom: 16px;
         letter-spacing: -1px;
         display: block;
+        position: relative;
+        
+
+        @media screen and (min-width: 768px) {
+            width: 280px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            font-size: 62px;
+            line-height: calc(68 / 62);
+            width: 540px;
+            margin-bottom: 50px;
+        }
     }
 
     &__text {
         line-height: calc(25 / 16);
         margin-bottom: 32px;
+        color: black;
+
+        @media screen and (min-width: 768px) {
+            position: relative;
+            left: 374px;
+            top: -60px;
+            width: 267px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            position: static;
+            width: 389px;
+            font-size: 24px;
+            line-height: calc(37 / 24);
+        }
+    }
+
+    &__thumb {
+        @media screen and (min-width: 768px) {
+        display: flex;
+        margin-bottom: 37px;
+        }
     }
 
     &__box {
         position: relative;
+
+        @media screen and (min-width: 768px) {
+            flex-basis: calc((100% - 20px) / 2);
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+
+        @media screen and (min-width: 1440px) {
+            margin-bottom: 37px;
+        }
     }
 
     &__label {
@@ -401,7 +850,6 @@
     }
 
     &__input {
-        margin-bottom: 37px;
         border: none;
         border-bottom: 1px solid $footer-list-color;
         width: 100%;
@@ -414,11 +862,54 @@
 
     &__message {
         margin-bottom: 16px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 23px;
+        }
+    }
+
+    &-submit__thumb {
+        display: flex;
+        justify-content: center;
+
+        @media screen and (min-width: 1440px) {
+            justify-content: start;
+        }
     }
 
     &__submit {
         padding: 20px 16px;
-        width: 100%;
+        min-width: 280px;
+
+        @media screen and (min-width: 1440px) {
+            min-width: 386px;
+        }
+    }
+}
+
+.message {
+    width: 100%;
+    margin-bottom: 32px;
+    border: none;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 27px;
+    }
+
+    @media screen and (min-width: 1440px) {
+        margin-bottom: 31px;
+    }
+
+    &__label {
+        top: 3px;
+    }
+
+    &__textarea {
+    width: 100%;
+    }
+
+    &__textarea:focus ~ &__label {
+        top: -20px;
     }
 }
 
@@ -427,20 +918,55 @@
     align-items: center;
     margin-bottom: 23px;
 
+    @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 1440px) {
+        margin-bottom: 34px;
+        align-items: flex-end;
+    }
+
     &__button {
-            border-radius: 10px;
-            border: none;
-            width: 45px;
-            height: 45px;
-            transform: rotate(45deg);
-            margin-right: 22px;
+        position: relative;
+        top: 0;
+        border-radius: 10px;
+        border: none;
+        width: 45px;
+        height: 45px;
+        transform: rotate(45deg);
+        margin-right: 22px;
+        box-shadow: 32px 32px 16px rgba(0, 0, 0, 0.09),
+            16px 16px 8px rgba(0, 0, 0, 0.09),
+            8px 8px 4px rgba(0, 0, 0, 0.09),
+            4px 4px 2px rgba(0, 0, 0, 0.09),
+            2px 2px 1px rgba(0, 0, 0, 0.09);
+
+        @media screen and (min-width: 768px) {
+            top: 10px;
         }
+    }
+
+    &__svg {
+        transform: rotate(-45deg);
+    }
+
 
     &__attention {
         font-size: 12px;
         line-height: calc(18 / 12);
         color: $form-attention-color;
         margin-bottom: 18px;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 48px;
+            margin-left: 67px;
+        }
+
+        @media screen and (min-width: 1440px) {
+            margin-bottom: 36px;
+            margin-left: 0;
+        }
     }
 }
     
