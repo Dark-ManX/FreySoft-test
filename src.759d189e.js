@@ -5,4 +5,4 @@ const e=document.querySelector(".container"),n=1440;function o(e){document.docum
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/size-listener");
 },{"./sass/main.scss":"clu1","./js/size-listener":"E250"}]},{},["Focm"], null)
-//# sourceMappingURL=/FreySoft-test/src.644b9ebd.js.map
+//# sourceMappingURL=/FreySoft-test/src.759d189e.js.map
